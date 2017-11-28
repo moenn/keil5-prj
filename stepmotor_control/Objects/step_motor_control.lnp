@@ -1,0 +1,3 @@
+".\Objects\step_motor_control.obj" 
+TO ".\Objects\step_motor_control" 
+PRINT(".\Listings\step_motor_control.m51") RAMSIZE(256) 

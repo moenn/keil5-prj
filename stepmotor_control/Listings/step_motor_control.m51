@@ -1,0 +1,142 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/28/2017  22:29:32  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\step_motor_control.obj TO .\Objects\step_motor_control PRINT (.\Listings\step_moto
+>> r_control.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\step_motor_control.obj (STEP_MOTOR_CONTROL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\step_motor_control (STEP_MOTOR_CONTROL)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         ?DT?STEP_MOTOR_CONTROL
+                    000BH     0015H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?STEP_MOTOR_CONTROL
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     003CH     UNIT         ?PR?TIMER0?STEP_MOTOR_CONTROL
+            CODE    08C8H     0011H     UNIT         ?PR?INIT?STEP_MOTOR_CONTROL
+            CODE    08D9H     000AH     UNIT         ?C_INITSEG
+            CODE    08E3H     0008H     UNIT         ?CO?STEP_MOTOR_CONTROL
+            CODE    08EBH     0005H     UNIT         ?PR?MAIN?STEP_MOTOR_CONTROL
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\step_motor_control (STEP_MOTOR_CONTROL)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?TIMER0?STEP_MOTOR_CONTROL
+  +--> ?CO?STEP_MOTOR_CONTROL
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?STEP_MOTOR_CONTROL
+  +--> ?C_INITSEG
+
+?PR?MAIN?STEP_MOTOR_CONTROL
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/28/2017  22:29:32  PAGE 2
+
+
+  +--> ?PR?INIT?STEP_MOTOR_CONTROL
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\step_motor_control (STEP_MOTOR_CONTROL)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        STEP_MOTOR_CONTROL
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:0008H         PUBLIC        speed
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:08EBH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:08C8H         PUBLIC        init
+  B:00A8H.1       PUBLIC        ET0
+  C:08E3H         PUBLIC        turn
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  C:088CH         PUBLIC        timer0
+  B:0088H.4       PUBLIC        TR0
+  D:000AH         PUBLIC        i
+  B:0020H.0       PUBLIC        turn_direction_flag
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:08EBH         LINE#         22
+  C:08EBH         LINE#         23
+  C:08EBH         LINE#         24
+  C:08EEH         LINE#         25
+  C:08EEH         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         PROC          INIT
+  C:08C8H         LINE#         31
+  C:08C8H         LINE#         33
+  C:08CBH         LINE#         34
+  C:08CFH         LINE#         35
+  C:08D2H         LINE#         41
+  C:08D4H         LINE#         42
+  C:08D6H         LINE#         49
+  C:08D8H         LINE#         51
+  -------         ENDPROC       INIT
+  -------         PROC          TIMER0
+  C:088CH         LINE#         70
+  C:0894H         LINE#         75
+  C:0898H         LINE#         76
+  C:089BH         LINE#         82
+  C:08A3H         LINE#         84
+  C:08A6H         LINE#         85
+  C:08A8H         LINE#         86
+  C:08AAH         LINE#         88
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/28/2017  22:29:32  PAGE 3
+
+
+  C:08ADH         LINE#         89
+  C:08AFH         LINE#         90
+  C:08AFH         LINE#         93
+  C:08B4H         LINE#         94
+  C:08B7H         LINE#         95
+  C:08B7H         LINE#         97
+  C:08BCH         LINE#         98
+  C:08BFH         LINE#         99
+  C:08BFH         LINE#         101
+  -------         ENDPROC       TIMER0
+  -------         ENDMOD        STEP_MOTOR_CONTROL
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0066H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=12.1 xdata=0 code=246
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
