@@ -2,11 +2,9 @@
 #include "intrins.h"
 #define uchar unsigned char
 #define uint unsigned int
-//void delay1ms(void);
-//void delay_nms(unsigned short int t);
-void init(void);
-uchar code turn[8] = {0x08,0x0c,0x04,0x06,0x02,0x03,0x01,0x09}; //45 degree per time
 
+void init(void);
+uchar code turn[8] = {0x08,0x0c,0x04,0x06,0x02,0x03,0x01,0x09};
 
 uchar i = 0;
 bit turn_direction_flag = 1;   // 0 - backward ; 1 - forward;
@@ -96,11 +94,6 @@ void timer0() interrupt 1
 		}
 	}
 	
-	
-
-	
-
-	
 }
 void timer1() interrupt 3
 {
@@ -117,21 +110,3 @@ void timer1() interrupt 3
 
 
 
-/*
-void delay1ms(void)   //?? -0.018084490741us
-{
-    unsigned char a,b;
-    for(b=21;b>0;b--)
-        for(a=130;a>0;a--);
-    _nop_();  //if Keil,require use intrins.h
-}
-
-void delay_nms(unsigned short int t)
-{
-	unsigned short int i;
-	for(i=0;i<t;i++){
-		delay1ms();
-	}
-}
-
-*/
